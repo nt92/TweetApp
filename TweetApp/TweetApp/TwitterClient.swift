@@ -14,7 +14,7 @@ let twitterConsumerKey = "LCdI2yDDrSc4SnjigG4RaspU2"
 let twitterConsumerSecret = "EKZ9RFAtvM2k1ZVHsaOznRm4ANPAu450OCWAb46XYA9tirYbc8"
 let twitterBaseURL = NSURL(string: "http://api.twitter.com")
 
-class TwitterClient: BDBOAuth1RequestOperationManager {
+class TwitterClient: BDBOAuth1SessionManager {
 
     class var sharedInstance: TwitterClient {
         struct Static {

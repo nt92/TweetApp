@@ -25,11 +25,11 @@ class ViewController: UIViewController {
 
     @IBAction func onLogin(sender: AnyObject) {
         TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
-        TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callBackURL: NSURL(string: "cptwitterdemo://oauth"), scope: nil, succes: { (requestToken: BDBOAuthToken!) -> Void in
+        TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callBackURL: NSURL(string: "cptwitterdemo://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential!) -> Void in
             println("Got token")
-            }) { (error: NSError!) -> Void in
+        }) { (error: NSError!) -> Void in
                 println("Failed to get token")
-        }
+            }
     }
 }
 
