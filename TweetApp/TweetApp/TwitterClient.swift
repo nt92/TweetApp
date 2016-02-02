@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 import BDBOAuth1Manager
 
 let twitterConsumerKey = "LCdI2yDDrSc4SnjigG4RaspU2"
