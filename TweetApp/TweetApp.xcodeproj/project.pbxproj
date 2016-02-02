@@ -25,7 +25,6 @@
 		A15ED2EE1C6050E60086F07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A15ED2F11C6050E60086F07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A15ED2F31C6050E60086F07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A15ED2F91C6051FF0086F07F /* TweetApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TweetApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		A15ED2FD1C60529B0086F07F /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		D09F243317035073FDC329E5 /* Pods-TweetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetApp/Pods-TweetApp.release.xcconfig"; sourceTree = "<group>"; };
 		D28108F2E5DB9470F2502814 /* Pods-TweetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetApp/Pods-TweetApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +79,6 @@
 				A15ED2EE1C6050E60086F07F /* Assets.xcassets */,
 				A15ED2F01C6050E60086F07F /* LaunchScreen.storyboard */,
 				A15ED2F31C6050E60086F07F /* Info.plist */,
-				A15ED2F91C6051FF0086F07F /* TweetApp-Bridging-Header.h */,
 			);
 			path = TweetApp;
 			sourceTree = "<group>";
