@@ -9,10 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +23,13 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func onLogin(sender: AnyObject) {
+        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+        TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callBackURL: NSURL(string: "cptwitterdemo://oauth"), scope: nil, succes: { (requestToken: BDBOAuthToken!) -> Void in
+            println("Got token")
+            }) { (error: NSError!) -> Voin in
+                println("Failed to get token")
+        }
+    }
 }
 
