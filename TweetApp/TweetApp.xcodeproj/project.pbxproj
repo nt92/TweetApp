@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7E0758B83CB3F50E19EDE281 /* Pods_TweetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57923DE879301E1AC19FD407 /* Pods_TweetApp.framework */; };
+		A105525D1C641AEF005ABDC5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105525C1C641AEF005ABDC5 /* User.swift */; };
+		A105525F1C641B08005ABDC5 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105525E1C641B08005ABDC5 /* Tweet.swift */; };
+		A10552621C641B5F005ABDC5 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10552611C641B5F005ABDC5 /* TweetsViewController.swift */; };
 		A15ED2E81C6050E60086F07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ED2E71C6050E60086F07F /* AppDelegate.swift */; };
 		A15ED2EA1C6050E60086F07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ED2E91C6050E60086F07F /* ViewController.swift */; };
 		A15ED2ED1C6050E60086F07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15ED2EB1C6050E60086F07F /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		57923DE879301E1AC19FD407 /* Pods_TweetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A105525C1C641AEF005ABDC5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A105525E1C641B08005ABDC5 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		A10552611C641B5F005ABDC5 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		A15ED2E41C6050E60086F07F /* TweetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15ED2E71C6050E60086F07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A15ED2E91C6050E60086F07F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +57,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A105525B1C641AD0005ABDC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A105525C1C641AEF005ABDC5 /* User.swift */,
+				A105525E1C641B08005ABDC5 /* Tweet.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A10552601C641B10005ABDC5 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A15ED2E91C6050E60086F07F /* ViewController.swift */,
+				A10552611C641B5F005ABDC5 /* TweetsViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
 		A15ED2DB1C6050E60086F07F = {
 			isa = PBXGroup;
 			children = (
@@ -72,9 +96,10 @@
 		A15ED2E61C6050E60086F07F /* TweetApp */ = {
 			isa = PBXGroup;
 			children = (
+				A10552601C641B10005ABDC5 /* View Controller */,
+				A105525B1C641AD0005ABDC5 /* Models */,
 				A15ED2FC1C60521E0086F07F /* API */,
 				A15ED2E71C6050E60086F07F /* AppDelegate.swift */,
-				A15ED2E91C6050E60086F07F /* ViewController.swift */,
 				A15ED2EB1C6050E60086F07F /* Main.storyboard */,
 				A15ED2EE1C6050E60086F07F /* Assets.xcassets */,
 				A15ED2F01C6050E60086F07F /* LaunchScreen.storyboard */,
@@ -222,6 +247,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A105525D1C641AEF005ABDC5 /* User.swift in Sources */,
+				A105525F1C641B08005ABDC5 /* Tweet.swift in Sources */,
+				A10552621C641B5F005ABDC5 /* TweetsViewController.swift in Sources */,
 				A15ED2EA1C6050E60086F07F /* ViewController.swift in Sources */,
 				A15ED2FE1C60529B0086F07F /* TwitterClient.swift in Sources */,
 				A15ED2E81C6050E60086F07F /* AppDelegate.swift in Sources */,

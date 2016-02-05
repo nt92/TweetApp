@@ -24,10 +24,38 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="DxN-Vw-Gem" kind="push" identifier="loginSegue" id="FG8-3E-YpT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162.66666666666666" y="396.18000000000001"/>
+        </scene>
+        <!--Tweets View Controller-->
+        <scene sceneID="nqv-yu-4OX">
+            <objects>
+                <viewController id="DxN-Vw-Gem" customClass="TweetsViewController" customModule="TweetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ExC-6D-zbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6oh-Mf-ZFL">
+                                <rect key="frame" x="133" y="241" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="DxN-Vw-Gem" eventType="touchUpInside" id="e7t-Jy-Iyt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fOo-fZ-ydb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYR-Hc-YB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="396"/>
         </scene>
     </scenes>
 </document>
