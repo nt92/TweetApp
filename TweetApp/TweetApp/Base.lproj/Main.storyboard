@@ -40,19 +40,20 @@
                     <view key="view" contentMode="scaleToFill" id="ExC-6D-zbZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6oh-Mf-ZFL">
-                                <rect key="frame" x="133" y="148" width="55" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fOo-fZ-ydb">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="bfh-oM-mI5">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6oh-Mf-ZFL">
+                                <rect key="frame" x="249" y="7" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="onLogout:" destination="DxN-Vw-Gem" eventType="touchUpInside" id="e7t-Jy-Iyt"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fOo-fZ-ydb"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYR-Hc-YB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
