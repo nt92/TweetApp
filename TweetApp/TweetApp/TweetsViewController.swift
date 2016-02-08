@@ -8,7 +8,23 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController {
+class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var tweets: [Tweet]?
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 20
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as? TweetCell
+        
+        cell?.tweet = tweets![indexPath.row]
+        
+        return cell!
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
