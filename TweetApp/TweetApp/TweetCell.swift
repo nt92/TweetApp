@@ -17,6 +17,8 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var tweetDate: UILabel!
     @IBOutlet weak var rtLabel: UILabel!
     @IBOutlet weak var favLabel: UILabel!
+    @IBOutlet weak var rtButton: UIButton!
+    @IBOutlet weak var favButton: UIButton!
     
     var isFavorite: Bool?
     var isRetweet: Bool?
@@ -54,11 +56,12 @@ class TweetCell: UITableViewCell {
             isRetweet = false
             self.tweet.retweetCount!--
             rtLabel.text = String(tweet.retweetCount!)
-            
+            rtButton.setImage(UIImage(named: "retweet-action.png"), forState: UIControlState.Normal)
         } else {
             isRetweet = true
             self.tweet.retweetCount!++
             rtLabel.text = String(tweet.retweetCount!)
+            rtButton.setImage(UIImage(named: "retweet-action-on.png"), forState: UIControlState.Normal)
         }
     }
     
@@ -69,11 +72,13 @@ class TweetCell: UITableViewCell {
             isFavorite = false
             self.tweet.favoriteCount!--
             favLabel.text = String(tweet.favoriteCount!)
+            favButton.setImage(UIImage(named: "like-action.png"), forState: UIControlState.Normal)
             
         } else {
             isFavorite = true
             self.tweet.favoriteCount!++
             favLabel.text = String(tweet.favoriteCount!)
+            favButton.setImage(UIImage(named: "like-action-on.png"), forState: UIControlState.Normal)
         }
     }
     
