@@ -10,9 +10,15 @@ import UIKit
 
 class DetailedTweetsViewController: UIViewController {
 
+    var tweet: Tweet?
+    
+    @IBOutlet weak var userName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userName.text = tweet!.user?.name
+        
         // Do any additional setup after loading the view.
     }
 
