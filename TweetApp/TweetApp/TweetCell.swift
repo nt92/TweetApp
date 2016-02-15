@@ -20,9 +20,6 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var rtButton: UIButton!
     @IBOutlet weak var favButton: UIButton!
     
-    var isFavorite: Bool?
-    var isRetweet: Bool?
-    
     var tweet: Tweet! {
         didSet{
             profPicture.setImageWithURL(NSURL(string: (tweet.user?.profileImageURL)!)!)
@@ -39,10 +36,6 @@ class TweetCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-        isFavorite = false
-        isRetweet = false
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -52,35 +45,36 @@ class TweetCell: UITableViewCell {
     }
     
     @IBAction func onRetweer(sender: AnyObject) {
-        if isRetweet == true {
-            isRetweet = false
+        if (!tweet.isRetweeted!) {
+            rtButton.setImage(UIImage(named: "retweet-action-on.png"), forState: UIControlState.Normal)
+            
             self.tweet.retweetCount!--
             rtLabel.text = String(tweet.retweetCount!)
+            TwitterClient.sharedInstance.retweetMe(tweet.id!)
+        }
+        else {
             rtButton.setImage(UIImage(named: "retweet-action.png"), forState: UIControlState.Normal)
-        } else {
-            isRetweet = true
+            
             self.tweet.retweetCount!++
             rtLabel.text = String(tweet.retweetCount!)
-            rtButton.setImage(UIImage(named: "retweet-action-on.png"), forState: UIControlState.Normal)
+            TwitterClient.sharedInstance.unRetweetMe(tweet.id!)
         }
     }
     
+    
     @IBAction func onFavorite(sender: AnyObject) {
-        
-        
-        if isFavorite == true {
-            isFavorite = false
-            self.tweet.favoriteCount!--
-            favLabel.text = String(tweet.favoriteCount!)
+        if (!tweet.isFavorited!) {
+            favButton.setImage(UIImage(named: "like-action-on.png"), forState: UIControlState.Normal)
+            
+            TwitterClient.sharedInstance.favoriteMe(tweet.id!)
+        }
+        else {
             favButton.setImage(UIImage(named: "like-action.png"), forState: UIControlState.Normal)
             
-        } else {
-            isFavorite = true
-            self.tweet.favoriteCount!++
-            favLabel.text = String(tweet.favoriteCount!)
-            favButton.setImage(UIImage(named: "like-action-on.png"), forState: UIControlState.Normal)
+            TwitterClient.sharedInstance.unFavoriteMe(tweet.id!)
         }
     }
+    
     
 
 }

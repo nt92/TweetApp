@@ -37,7 +37,7 @@ class TwitterClient: BDBOAuth1SessionManager {
                 
                 print(response)
                 let tweets = Tweet.tweetswithArray(response as! [NSDictionary])
-                //send data thru completion block
+                
                 self.tweetsCompletion!(tweets:tweets, error:nil)
             }, failure: { (operation:NSURLSessionDataTask?, error:NSError) -> Void in
                 print("Couldn't get tweets")
@@ -87,6 +87,36 @@ class TwitterClient: BDBOAuth1SessionManager {
             }) { (error: NSError!) -> Void in
                 print("Failed to Recieve Access Token")
                 self.loginCompletion?(user:nil, error:error)
+        }
+    }
+    
+    func favoriteMe(id: String) {
+        POST("https://api.twitter.com/1.1/favorites/create.json?id=\(id)", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("Succesfully favorited")
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("Failed to favorite")
+        }
+    }
+    func unFavoriteMe(id: String) {
+        POST("https://api.twitter.com/1.1/favorites/destroy.json?id=\(id)", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("Succesfully un-favorited")
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("Failed to un-favorite")
+        }
+    }
+    
+    func retweetMe(id: String) {
+        POST("https://api.twitter.com/1.1/statuses/retweet/\(id).json", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("Successfully retweeted")
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("Failed to retweet")
+        }
+    }
+    func unRetweetMe(id: String) {
+        POST("https://api.twitter.com/1.1/statuses/unretweet/\(id).json", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("Successfully un-retweeted")
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("Failed to un-retweet")
         }
     }
     
