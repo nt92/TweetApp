@@ -132,7 +132,7 @@
                                             <outlet property="twitterHandle" destination="0mt-Sb-zlF" id="amv-YG-pww"/>
                                             <outlet property="twitterName" destination="uPu-Vr-PQC" id="vtw-3l-yXz"/>
                                             <outlet property="userTweet" destination="zvo-ZV-Mdp" id="ZKu-d5-OLu"/>
-                                            <segue destination="tGH-wj-8Z1" kind="push" id="WTS-qf-OMF"/>
+                                            <segue destination="tGH-wj-8Z1" kind="push" identifier="DetailTweet" id="WTS-qf-OMF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -142,6 +142,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Twitter" id="fOo-fZ-ydb">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="TO3-Ee-gfm">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="581-qs-Cf2">
+                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Compose"/>
+                                <connections>
+                                    <segue destination="kP6-Oh-agd" kind="modal" id="box-jq-nYR"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="bfh-oM-mI5">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6oh-Mf-ZFL">
                                 <rect key="frame" x="249" y="7" width="55" height="30"/>
@@ -160,6 +170,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYR-Hc-YB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2035" y="395"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="Kdv-t7-Dya">
+            <objects>
+                <viewController id="kP6-Oh-agd" customClass="ComposeViewController" customModule="TweetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdo-It-QEy"/>
+                        <viewControllerLayoutGuide type="bottom" id="88Y-8F-FNd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uu1-v0-xRk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWM-Lf-AjR">
+                                <rect key="frame" x="39" y="243" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="kP6-Oh-agd" eventType="touchUpInside" id="r8H-jS-Hva"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVI-tE-S72">
+                                <rect key="frame" x="242" y="243" width="31" height="30"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="onPost:" destination="kP6-Oh-agd" eventType="touchUpInside" id="HTt-cV-GzR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKa-gN-pCt">
+                                <rect key="frame" x="39" y="142" width="234" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onChangeText:" destination="kP6-Oh-agd" eventType="editingDidEnd" id="2Ua-Xp-qHJ"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGR-b2-zrf">
+                                <rect key="frame" x="146" y="247" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="TWM-Lf-AjR" id="aF7-XF-Z4M"/>
+                        <outlet property="charCount" destination="fGR-b2-zrf" id="FNU-Gv-n2A"/>
+                        <outlet property="postButton" destination="HVI-tE-S72" id="vZY-ID-Sf3"/>
+                        <outlet property="userText" destination="uKa-gN-pCt" id="hoI-1p-PxU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqh-TB-e6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2380" y="-288"/>
         </scene>
         <!--Tweet-->
         <scene sceneID="ItH-RS-eaO">
@@ -253,6 +317,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djd-ou-j8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2460" y="395"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bMX-y8-w8y">
+            <objects>
+                <viewController id="GHr-28-atG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ltf-Hw-ZN1"/>
+                        <viewControllerLayoutGuide type="bottom" id="f61-nG-zDO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gb3-VE-SRI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLz-1f-8gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824" y="-240"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KXy-YF-BZa">

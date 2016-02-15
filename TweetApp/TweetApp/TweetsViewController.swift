@@ -77,12 +77,14 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let cell = sender as! UITableViewCell
-        let indexPath = tableView.indexPathForCell(cell)
-        let tweet = tweets![indexPath!.row]
+        if segue.identifier == "DetailTweet" {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let tweet = tweets![indexPath!.row]
         
-        let detailViewController = segue.destinationViewController as! DetailedTweetsViewController
-        detailViewController.tweet = tweet
+            let detailViewController = segue.destinationViewController as! DetailedTweetsViewController
+            detailViewController.tweet = tweet
+        }
     }
     
     @IBAction func onLogout(sender: AnyObject) {
